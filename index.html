@@ -96,5 +96,56 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <form
+  action="https://formspree.io/f/movazzej"
+  method="POST"
+  id="investment-form"
+>
+  <label for="investment-type">Investment Type:</label>
+  <select id="investment-type" name="investment-type" required>
+    <option value="stock">Stock</option>
+    <option value="bond">Bond</option>
+    <option value="commodity">Commodity</option>
+    <option value="cash">Cash</option>
+    <option value="ETF">Exchange Traded Fund (ETF)</option>
+  </select>
+  
+  <label for="investment-name">Investment Name:</label>
+  <input type="text" id="investment-name" name="investment-name" required>
+  
+  <label for="investment-amount">Investment Amount:</label>
+  <input type="number" id="investment-amount" name="investment-amount" required>
+  
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email" required>
+  
+  <label for="message">Any Additional Message:</label>
+  <textarea id="message" name="message"></textarea>
+
+  <button type="submit">Submit Investment</button>
+</form>
+<script>
+  document.getElementById('investment-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(event.target);
+
+    fetch('https://formspree.io/f/movazzej', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert('Investment submitted successfully!');
+      document.getElementById('investment-form').reset(); // Optionally reset the form
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was an error submitting your investment.');
+    });
+  });
+</script>
+
 </body>
 </html>
