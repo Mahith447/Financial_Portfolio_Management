@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="transaction-history.html">Transaction History</a>
+            <a href="asset-balances.html">Asset Balances</a>
+            <a href="charts.html">Charts</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="portfolio">
+            <h2>Your Portfolio</h2>
+            <form id="investment-form">
+                <label for="investment-type">Investment Type:</label>
+                <select id="investment-type">
+                    <option value="stock">Stock</option>
+                    <option value="bond">Bond</option>
+                    <option value="commodity">Commodity</option>
+                    <option value="cash">Cash</option>
+                    <option value="ETF">Exchange Traded Fund (ETF)</option>
+                </select>
+                <label for="investment-name">Investment Name:</label>
+                <input type="text" id="investment-name" required>
+                <label for="investment-amount">Investment Amount:</label>
+                <input type="number" id="investment-amount" required>
+                <button type="button" onclick="addInvestment()">Add Investment</button>
+                <button type="button" onclick="downloadInvestmentData()">Download Investment Data</button>
+                <div id="notification"></div>
+            </form>
+            <ul id="investment-list"></ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Financial Portfolio Management</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Charts</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="transaction-history.html">Transaction History</a>
+            <a href="asset-balances.html">Asset Balances</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="charts">
+            <h2>Investment Overview</h2>
+            <div class="graph-container">
+                <canvas id="investment-graph"></canvas>
+            </div>
+            <div class="pie-chart-container">
+                <canvas id="investment-pie-chart"></canvas>
+            </div>
+            <div class="graph-container">
+                <canvas id="investment-line-chart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Financial Portfolio Management</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

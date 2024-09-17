@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export Data</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Export Data</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="edit.html">Edit Investments</a>
+      <a href="export.html">Export Data</a>
+    </nav>
+  </header>
+
+  <div class="export-options">
+    <h2>Export Your Data</h2>
+    <button type="button" onclick="downloadInvestmentData('csv')">Download CSV</button>
+    <button type="button" onclick="downloadInvestmentData('pdf')">Download PDF</button>
+    <button type="button" onclick="downloadInvestmentData('excel')">Download Excel</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Financial Portfolio Management</p>
+  </footer>
+
+  <script src="export.js"></script>
+  <!-- Include jsPDF for PDF export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Include xlsx for Excel export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</body>
+</html>
